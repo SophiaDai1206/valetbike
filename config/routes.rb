@@ -9,6 +9,6 @@ Rails.application.routes.draw do
   get 'main/createAccount'
   get 'main/rent'
   get 'main/return'
-  root to: "main/welcome"
+  #root to: "main/welcome"
 
 end
