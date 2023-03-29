@@ -2907,3 +2907,420 @@ Processing by SessionsController#welcome as TURBO_STREAM
 Completed 200 OK in 1994ms (Views: 1825.6ms | ActiveRecord: 0.0ms | Allocations: 8169)
 
 
+Started GET "/" for ::1 at 2023-03-28 07:05:26 -0400
+Processing by MainController#welcome as HTML
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering main/welcome.html.erb within layouts/application
+  Rendered main/welcome.html.erb within layouts/application (Duration: 0.2ms | Allocations: 76)
+  Rendered layouts/_sidebar.html.erb (Duration: 0.6ms | Allocations: 212)
+  Rendered layout layouts/application.html.erb (Duration: 1683.6ms | Allocations: 7291)
+Completed 200 OK in 1797ms (Views: 1687.2ms | ActiveRecord: 2.4ms | Allocations: 8407)
+
+
+Started GET "/login" for ::1 at 2023-03-28 07:05:35 -0400
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.1ms | Allocations: 554)
+  Rendered layouts/_sidebar.html.erb (Duration: 0.3ms | Allocations: 198)
+  Rendered layout layouts/application.html.erb (Duration: 1639.2ms | Allocations: 7766)
+Completed 200 OK in 1749ms (Views: 1643.0ms | ActiveRecord: 0.0ms | Allocations: 8039)
+
+
+Started POST "/login" for ::1 at 2023-03-28 07:05:39 -0400
+Processing by SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "username"=>"aria", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`username` = 'aria' LIMIT 1[0m
+  ↳ app/controllers/sessions_controller.rb:9:in `create'
+Redirected to http://localhost:3000/welcome
+Completed 302 Found in 639ms (ActiveRecord: 0.9ms | Allocations: 906)
+
+
+Started GET "/welcome" for ::1 at 2023-03-28 07:05:41 -0400
+Processing by SessionsController#welcome as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/welcome.html.erb within layouts/application
+  Rendered sessions/welcome.html.erb within layouts/application (Duration: 0.2ms | Allocations: 18)
+  Rendered layouts/_sidebar.html.erb (Duration: 0.3ms | Allocations: 212)
+  Rendered layout layouts/application.html.erb (Duration: 1698.9ms | Allocations: 7480)
+Completed 200 OK in 1810ms (Views: 1703.3ms | ActiveRecord: 0.0ms | Allocations: 7752)
+
+
+Started GET "/users/new" for ::1 at 2023-03-28 07:06:02 -0400
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 366.7ms | Allocations: 3168)
+  Rendered layouts/_sidebar.html.erb (Duration: 0.3ms | Allocations: 201)
+  Rendered layout layouts/application.html.erb (Duration: 1963.8ms | Allocations: 10705)
+Completed 200 OK in 2120ms (Views: 1983.7ms | ActiveRecord: 0.0ms | Allocations: 11601)
+
+
+Started POST "/users" for ::1 at 2023-03-28 07:06:13 -0400
+Processing by UsersController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"priya", "password"=>"[FILTERED]"}, "commit"=>"Create User"}
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:10:in `create'
+  [1m[36mUser Create (18.4ms)[0m  [1m[32mINSERT INTO `users` (`username`, `password_digest`, `created_at`, `updated_at`) VALUES ('priya', '$2a$12$jBNuC0WZoGwQrNiJtuyE6OK67F4ZomOOnEdvKH/j3bjfVz/cfTVCy', '2023-03-28 11:06:14.245138', '2023-03-28 11:06:14.245138')[0m
+  ↳ app/controllers/users_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (19.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:10:in `create'
+Redirected to http://localhost:3000/welcome
+Completed 302 Found in 557ms (ActiveRecord: 38.7ms | Allocations: 3591)
+
+
+Started GET "/welcome" for ::1 at 2023-03-28 07:06:14 -0400
+Processing by SessionsController#welcome as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/welcome.html.erb within layouts/application
+  Rendered sessions/welcome.html.erb within layouts/application (Duration: 0.3ms | Allocations: 18)
+  Rendered layouts/_sidebar.html.erb (Duration: 0.2ms | Allocations: 212)
+  Rendered layout layouts/application.html.erb (Duration: 1586.8ms | Allocations: 7411)
+Completed 200 OK in 1725ms (Views: 1590.8ms | ActiveRecord: 0.0ms | Allocations: 7712)
+
+
+Started GET "/welcome" for ::1 at 2023-03-28 07:11:08 -0400
+Processing by SessionsController#welcome as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/welcome.html.erb within layouts/application
+  Rendered sessions/welcome.html.erb within layouts/application (Duration: 0.1ms | Allocations: 18)
+  Rendered layouts/_sidebar.html.erb (Duration: 0.4ms | Allocations: 212)
+  Rendered layout layouts/application.html.erb (Duration: 1738.9ms | Allocations: 7391)
+Completed 200 OK in 1845ms (Views: 1746.8ms | ActiveRecord: 0.0ms | Allocations: 7657)
+
+
+Started GET "/" for ::1 at 2023-03-28 07:12:25 -0400
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by MainController#welcome as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering main/welcome.html.erb within layouts/application
+  Rendered main/welcome.html.erb within layouts/application (Duration: 76.2ms | Allocations: 550)
+  Rendered layouts/_sidebar.html.erb (Duration: 60.1ms | Allocations: 457)
+  Rendered layout layouts/application.html.erb (Duration: 8507.7ms | Allocations: 55764)
+Completed 200 OK in 9359ms (Views: 8641.3ms | ActiveRecord: 7.8ms | Allocations: 66468)
+
+
+Started GET "/" for ::1 at 2023-03-28 07:13:22 -0400
+Processing by MainController#welcome as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering main/welcome.html.erb within layouts/application
+  Rendered main/welcome.html.erb within layouts/application (Duration: 0.2ms | Allocations: 97)
+  Rendered layouts/_sidebar.html.erb (Duration: 0.3ms | Allocations: 213)
+  Rendered layout layouts/application.html.erb (Duration: 1694.2ms | Allocations: 7462)
+Completed 200 OK in 1836ms (Views: 1697.5ms | ActiveRecord: 1.1ms | Allocations: 8577)
+
+
+Started GET "/" for ::1 at 2023-03-28 07:17:01 -0400
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by MainController#welcome as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` IS NULL LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+Redirected to http://localhost:3000/welcome
+Filter chain halted as :authorized rendered or redirected
+Completed 302 Found in 453ms (ActiveRecord: 3.1ms | Allocations: 4927)
+
+
+Started GET "/welcome" for ::1 at 2023-03-28 07:17:04 -0400
+Processing by SessionsController#welcome as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/welcome.html.erb within layouts/application
+  Rendered sessions/welcome.html.erb within layouts/application (Duration: 98.1ms | Allocations: 362)
+  Rendered layouts/_sidebar.html.erb (Duration: 43.0ms | Allocations: 459)
+  Rendered layout layouts/application.html.erb (Duration: 8256.4ms | Allocations: 55935)
+Completed 200 OK in 8702ms (Views: 8403.1ms | ActiveRecord: 0.0ms | Allocations: 58190)
+
+
+Started GET "/main/welcome" for ::1 at 2023-03-28 07:23:05 -0400
+  [1m[36mActiveRecord::SchemaMigration Pluck (2.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by MainController#welcome as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` IS NULL LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+Redirected to http://localhost:3000/welcome
+Filter chain halted as :authorized rendered or redirected
+Completed 302 Found in 451ms (ActiveRecord: 3.1ms | Allocations: 5112)
+
+
+Started GET "/welcome" for ::1 at 2023-03-28 07:23:09 -0400
+Processing by SessionsController#welcome as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/welcome.html.erb within layouts/application
+  Rendered sessions/welcome.html.erb within layouts/application (Duration: 76.9ms | Allocations: 363)
+  Rendered layouts/_sidebar.html.erb (Duration: 50.0ms | Allocations: 458)
+  Rendered layout layouts/application.html.erb (Duration: 8312.0ms | Allocations: 55803)
+Completed 200 OK in 8695ms (Views: 8430.6ms | ActiveRecord: 0.0ms | Allocations: 58059)
+
+
+Started GET "/main/welcome" for ::1 at 2023-03-28 07:23:22 -0400
+Processing by MainController#welcome as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` IS NULL LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+Redirected to http://localhost:3000/welcome
+Filter chain halted as :authorized rendered or redirected
+Completed 302 Found in 186ms (ActiveRecord: 0.8ms | Allocations: 1096)
+
+
+Started GET "/welcome" for ::1 at 2023-03-28 07:23:24 -0400
+Processing by SessionsController#welcome as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/welcome.html.erb within layouts/application
+  Rendered sessions/welcome.html.erb within layouts/application (Duration: 0.2ms | Allocations: 18)
+  Rendered layouts/_sidebar.html.erb (Duration: 0.3ms | Allocations: 212)
+  Rendered layout layouts/application.html.erb (Duration: 1735.1ms | Allocations: 7406)
+Completed 200 OK in 1873ms (Views: 1738.8ms | ActiveRecord: 0.0ms | Allocations: 7707)
+
+
+Started GET "/main/welcome" for ::1 at 2023-03-28 07:23:40 -0400
+Processing by MainController#welcome as HTML
+  [1m[36mUser Load (3.9ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` IS NULL LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+Redirected to http://localhost:3000/welcome
+Filter chain halted as :authorized rendered or redirected
+Completed 302 Found in 186ms (ActiveRecord: 3.9ms | Allocations: 966)
+
+
+Started GET "/welcome" for ::1 at 2023-03-28 07:23:41 -0400
+Processing by SessionsController#welcome as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/welcome.html.erb within layouts/application
+  Rendered sessions/welcome.html.erb within layouts/application (Duration: 0.1ms | Allocations: 18)
+  Rendered layouts/_sidebar.html.erb (Duration: 0.4ms | Allocations: 212)
+  Rendered layout layouts/application.html.erb (Duration: 1748.5ms | Allocations: 7610)
+Completed 200 OK in 1911ms (Views: 1752.2ms | ActiveRecord: 0.0ms | Allocations: 7883)
+
+
+Started GET "/users/new" for ::1 at 2023-03-28 07:25:05 -0400
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 367.3ms | Allocations: 3236)
+Started GET "/login" for ::1 at 2023-03-28 07:25:09 -0400
+  Rendered layouts/_sidebar.html.erb (Duration: 0.3ms | Allocations: 217)
+  Rendered layout layouts/application.html.erb (Duration: 2026.8ms | Allocations: 11630)
+Completed 200 OK in 2275ms (Views: 2052.1ms | ActiveRecord: 5.5ms | Allocations: 15586)
+
+
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 68.6ms | Allocations: 821)
+  Rendered layouts/_sidebar.html.erb (Duration: 0.4ms | Allocations: 197)
+  Rendered layout layouts/application.html.erb (Duration: 1852.5ms | Allocations: 8028)
+Completed 200 OK in 2038ms (Views: 1857.4ms | ActiveRecord: 0.0ms | Allocations: 8415)
+
+
+Started POST "/login" for ::1 at 2023-03-28 07:25:16 -0400
+Processing by SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "username"=>"aria", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`username` = 'aria' LIMIT 1[0m
+  ↳ app/controllers/sessions_controller.rb:9:in `create'
+Redirected to http://localhost:3000/welcome
+Completed 302 Found in 598ms (ActiveRecord: 0.8ms | Allocations: 1835)
+
+
+Started GET "/welcome" for ::1 at 2023-03-28 07:25:18 -0400
+Processing by SessionsController#welcome as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/welcome.html.erb within layouts/application
+  Rendered sessions/welcome.html.erb within layouts/application (Duration: 0.2ms | Allocations: 20)
+  Rendered layouts/_sidebar.html.erb (Duration: 0.2ms | Allocations: 213)
+  Rendered layout layouts/application.html.erb (Duration: 1713.2ms | Allocations: 7607)
+Completed 200 OK in 1871ms (Views: 1716.9ms | ActiveRecord: 0.0ms | Allocations: 7968)
+
+
+Started GET "/login" for ::1 at 2023-03-28 07:25:24 -0400
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.1ms | Allocations: 542)
+  Rendered layouts/_sidebar.html.erb (Duration: 0.2ms | Allocations: 198)
+  Rendered layout layouts/application.html.erb (Duration: 1762.5ms | Allocations: 7905)
+Completed 200 OK in 1915ms (Views: 1765.6ms | ActiveRecord: 0.0ms | Allocations: 8177)
+
+
+Started GET "/main/welcome" for ::1 at 2023-03-28 07:25:31 -0400
+Processing by MainController#welcome as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering main/welcome.html.erb within layouts/application
+  Rendered main/welcome.html.erb within layouts/application (Duration: 51.2ms | Allocations: 310)
+  Rendered layouts/_sidebar.html.erb (Duration: 0.5ms | Allocations: 216)
+  Rendered layout layouts/application.html.erb (Duration: 1787.6ms | Allocations: 7758)
+Completed 200 OK in 2002ms (Views: 1816.4ms | ActiveRecord: 0.6ms | Allocations: 9754)
+
+
+Started GET "/" for ::1 at 2023-03-28 07:25:43 -0400
+Processing by MainController#welcome as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering main/welcome.html.erb within layouts/application
+  Rendered main/welcome.html.erb within layouts/application (Duration: 0.2ms | Allocations: 76)
+  Rendered layouts/_sidebar.html.erb (Duration: 0.2ms | Allocations: 212)
+  Rendered layout layouts/application.html.erb (Duration: 1687.8ms | Allocations: 7292)
+Completed 200 OK in 1822ms (Views: 1690.3ms | ActiveRecord: 0.8ms | Allocations: 8350)
+
+
+Started GET "/login" for ::1 at 2023-03-28 07:25:53 -0400
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.4ms | Allocations: 556)
+  Rendered layouts/_sidebar.html.erb (Duration: 0.3ms | Allocations: 197)
+  Rendered layout layouts/application.html.erb (Duration: 1738.5ms | Allocations: 7756)
+Completed 200 OK in 1868ms (Views: 1742.2ms | ActiveRecord: 0.0ms | Allocations: 8026)
+
+
+Started POST "/login" for ::1 at 2023-03-28 07:26:04 -0400
+Processing by SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "username"=>"PRIYA", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`username` = 'PRIYA' LIMIT 1[0m
+  ↳ app/controllers/sessions_controller.rb:9:in `create'
+No template found for SessionsController#create, rendering head :no_content
+Completed 204 No Content in 660ms (ActiveRecord: 0.8ms | Allocations: 1086)
+
+
+Started POST "/login" for ::1 at 2023-03-28 07:26:16 -0400
+Processing by SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "username"=>"priya", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`username` = 'priya' LIMIT 1[0m
+  ↳ app/controllers/sessions_controller.rb:9:in `create'
+Redirected to http://localhost:3000/welcome
+Completed 302 Found in 609ms (ActiveRecord: 0.7ms | Allocations: 907)
+
+
+Started GET "/welcome" for ::1 at 2023-03-28 07:26:18 -0400
+Processing by SessionsController#welcome as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/welcome.html.erb within layouts/application
+  Rendered sessions/welcome.html.erb within layouts/application (Duration: 0.1ms | Allocations: 18)
+  Rendered layouts/_sidebar.html.erb (Duration: 0.2ms | Allocations: 212)
+  Rendered layout layouts/application.html.erb (Duration: 1785.6ms | Allocations: 7408)
+Completed 200 OK in 1938ms (Views: 1789.2ms | ActiveRecord: 0.0ms | Allocations: 7681)
+
+
+Started GET "/login" for ::1 at 2023-03-28 07:26:28 -0400
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.6ms | Allocations: 541)
+  Rendered layouts/_sidebar.html.erb (Duration: 0.3ms | Allocations: 197)
+  Rendered layout layouts/application.html.erb (Duration: 1715.0ms | Allocations: 7943)
+Completed 200 OK in 1855ms (Views: 1718.4ms | ActiveRecord: 0.0ms | Allocations: 8213)
+
+
+Started POST "/login" for ::1 at 2023-03-28 07:26:36 -0400
+Processing by SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "username"=>"aria", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`username` = 'aria' LIMIT 1[0m
+  ↳ app/controllers/sessions_controller.rb:9:in `create'
+No template found for SessionsController#create, rendering head :no_content
+Completed 204 No Content in 548ms (ActiveRecord: 0.9ms | Allocations: 873)
+
+
+Started POST "/login" for ::1 at 2023-03-28 07:26:39 -0400
+Processing by SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "username"=>"aria", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`username` = 'aria' LIMIT 1[0m
+  ↳ app/controllers/sessions_controller.rb:9:in `create'
+No template found for SessionsController#create, rendering head :no_content
+Completed 204 No Content in 620ms (ActiveRecord: 0.9ms | Allocations: 882)
+
+
+Started GET "/main/welcome" for ::1 at 2023-03-28 07:26:43 -0400
+Processing by MainController#welcome as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering main/welcome.html.erb within layouts/application
+  Rendered main/welcome.html.erb within layouts/application (Duration: 0.5ms | Allocations: 76)
+  Rendered layouts/_sidebar.html.erb (Duration: 0.2ms | Allocations: 212)
+  Rendered layout layouts/application.html.erb (Duration: 1644.7ms | Allocations: 7275)
+Completed 200 OK in 1806ms (Views: 1648.3ms | ActiveRecord: 1.1ms | Allocations: 8225)
+
+
+Started GET "/login" for ::1 at 2023-03-28 07:27:05 -0400
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.0ms | Allocations: 538)
+  Rendered layouts/_sidebar.html.erb (Duration: 0.3ms | Allocations: 197)
+  Rendered layout layouts/application.html.erb (Duration: 1738.0ms | Allocations: 7737)
+Completed 200 OK in 1873ms (Views: 1741.4ms | ActiveRecord: 0.0ms | Allocations: 8007)
+
+
+Started POST "/login" for ::1 at 2023-03-28 07:27:14 -0400
+Processing by SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "username"=>"jannet", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`username` = 'jannet' LIMIT 1[0m
+  ↳ app/controllers/sessions_controller.rb:9:in `create'
+No template found for SessionsController#create, rendering head :no_content
+Completed 204 No Content in 147ms (ActiveRecord: 0.9ms | Allocations: 840)
+
+
+Started POST "/login" for ::1 at 2023-03-28 07:27:26 -0400
+Processing by SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "username"=>"bob", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`username` = 'bob' LIMIT 1[0m
+  ↳ app/controllers/sessions_controller.rb:9:in `create'
+No template found for SessionsController#create, rendering head :no_content
+Completed 204 No Content in 152ms (ActiveRecord: 0.8ms | Allocations: 831)
+
+
+Started POST "/login" for ::1 at 2023-03-28 07:27:38 -0400
+Processing by SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "username"=>"priya", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`username` = 'priya' LIMIT 1[0m
+  ↳ app/controllers/sessions_controller.rb:9:in `create'
+No template found for SessionsController#create, rendering head :no_content
+Completed 204 No Content in 745ms (ActiveRecord: 0.9ms | Allocations: 857)
+
+
+Started POST "/login" for ::1 at 2023-03-28 07:27:44 -0400
+Processing by SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "username"=>"priya", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`username` = 'priya' LIMIT 1[0m
+  ↳ app/controllers/sessions_controller.rb:9:in `create'
+Redirected to http://localhost:3000/welcome
+Completed 302 Found in 807ms (ActiveRecord: 1.0ms | Allocations: 877)
+
+
+Started GET "/welcome" for ::1 at 2023-03-28 07:27:46 -0400
+Processing by SessionsController#welcome as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/welcome.html.erb within layouts/application
+  Rendered sessions/welcome.html.erb within layouts/application (Duration: 0.1ms | Allocations: 18)
+  Rendered layouts/_sidebar.html.erb (Duration: 0.5ms | Allocations: 212)
+  Rendered layout layouts/application.html.erb (Duration: 1672.7ms | Allocations: 7393)
+Completed 200 OK in 1808ms (Views: 1676.5ms | ActiveRecord: 0.0ms | Allocations: 7665)
+
+
+Started GET "/welcome" for ::1 at 2023-03-28 07:45:17 -0400
+Processing by SessionsController#welcome as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/welcome.html.erb within layouts/application
+  Rendered sessions/welcome.html.erb within layouts/application (Duration: 0.8ms | Allocations: 18)
+  Rendered layouts/_sidebar.html.erb (Duration: 0.5ms | Allocations: 212)
+  Rendered layout layouts/application.html.erb (Duration: 1705.2ms | Allocations: 7429)
+Completed 200 OK in 1879ms (Views: 1710.5ms | Allocations: 7695)
+
+
+Started GET "/" for ::1 at 2023-03-28 07:46:26 -0400
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by MainController#welcome as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering main/welcome.html.erb within layouts/application
+  Rendered main/welcome.html.erb within layouts/application (Duration: 96.9ms | Allocations: 550)
+  Rendered layouts/_sidebar.html.erb (Duration: 52.6ms | Allocations: 460)
+  Rendered layout layouts/application.html.erb (Duration: 8164.7ms | Allocations: 55926)
+Completed 200 OK in 8978ms (Views: 8292.3ms | ActiveRecord: 8.8ms | Allocations: 66662)
+
+
