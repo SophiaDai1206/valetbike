@@ -9,11 +9,9 @@ class User < ApplicationRecord
         "Hello, #{self.email}!"
     end
 
-    attr_accessor :login 
+    #attr_accessor :login 
 
-    def login 
-        @login self.email
-    end 
+   
 
 
 
